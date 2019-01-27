@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 
 import logo from "../logo.svg";
+import { ButtonContainer } from "./styling/Button";
+import { NavWraper } from "./styling/NavWraper";
 
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+      <NavWraper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
         <Link to="/">
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>
@@ -24,24 +25,7 @@ export default class Navbar extends Component {
             My cart
           </ButtonContainer>
         </Link>
-      </nav>
+      </NavWraper>
     );
   }
 }
-
-//styling using styled components
-const ButtonContainer = styled.button`
-  text-transform: capitalize;
-  color: white;
-  font-size: 1.4rem;
-  background: transparent;
-  border: 0.05rem solid var(--lightBlue);
-  cursor: pointer;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  margin: 0.2rem 0.5rem 0.2rem 0;
-  transition: all 0.05s ease-in-out;
-  &:hover {
-    background-color: var(--lightBlue);
-  }
-`;
